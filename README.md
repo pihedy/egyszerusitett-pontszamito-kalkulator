@@ -1,0 +1,1 @@
+# egyszerusitett-pontszamito-kalkulator
