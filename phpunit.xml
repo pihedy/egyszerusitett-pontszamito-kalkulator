@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    bootstrap="src/vendor/autoload.php"
+    colors="true"
+    verbose="true"
+>
+    <testsuites>
+        <testsuite name="Egyszerűsített Pontszámítás Tesztek">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
