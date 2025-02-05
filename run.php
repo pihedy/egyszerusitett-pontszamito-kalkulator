@@ -23,6 +23,14 @@ try {
      * @var array Required configuration data.
      */
     $requirements = include __DIR__ . '/config/requirements.php' ?? [];
+
+    $data = (new \App\Calculator\PointCalculator($requirements))->calculate();
+
+    echo "Array (" . count($data) . "):\n";
+
+    foreach ($data as $key => $value) {
+        echo "[\033[1;32m$key\033[0m] => \033[1;34m$value\033[0m\n";
+    }
 } catch (\Exception $Exception) {
     echo $Exception->getMessage();
 }

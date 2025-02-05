@@ -7,15 +7,15 @@
 return [
     'majors' => [
         'computer_science' => [
-            'mandatory' => 'mathematics',
-            'elective' => ['biology', 'physics', 'informatics', 'chemistry']
+            'mandatory' => 'matematika',
+            'elective' => ['biológia', 'fizika', 'informatika', 'kémia']
         ],
         'anglistics' => [
-            'mandatory' => 'english',
-            'elective' => ['french', 'german', 'italian', 'russian', 'spanish', 'history']
+            'mandatory' => 'angol',
+            'elective' => ['francia', 'német', 'olasz', 'oros', 'spanyol', 'történelem']
         ]
     ],
-    'mandatory_subjects' => ['hungarian_language_and_literature', 'history', 'mathematics'],
+    'mandatory_subjects' => ['magyar nyelv és irodalom', 'történelem', 'matematika'],
     'language_exam_points' => [
         'b2' => 28,
         'c1' => 40
