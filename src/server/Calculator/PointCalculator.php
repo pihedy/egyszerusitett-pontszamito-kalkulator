@@ -98,10 +98,10 @@ final class PointCalculator
 
             $bonusPoints = 0;
 
-            $languageExams = $Applicant->get('nyelvvizsgak', []);
+            $languageExams = $Applicant->get('tobbletpontok', []);
 
             foreach ($languageExams as $exam) {
-                $bonusPoints = match ($exam) {
+                $bonusPoints += match ($exam['tipus']) {
                     'B2' => max($bonusPoints, 28),
                     'C1' => max($bonusPoints, 40),
                     default => 0
