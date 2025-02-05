@@ -8,6 +8,11 @@ namespace App\Utils;
 final class Support
 {
     /**
+     * An array to store words.
+     */
+    public static array $words = [];
+
+    /**
      * Converts the given text to a URL-friendly slug.
      *
      * @param string $text The input text to be slugified.
@@ -35,5 +40,17 @@ final class Support
         $text = trim($text, $separator);
 
         return $text;
+    }
+
+    /**
+     * Converts the given word key to its corresponding text representation.
+     *
+     * @param string $key The word key to be converted.
+     *
+     * @return string The text representation of the word key.
+     */
+    public static function changeWordKeyToText(string $key): string
+    {
+        return self::$words[$key] ?? $key;
     }
 }

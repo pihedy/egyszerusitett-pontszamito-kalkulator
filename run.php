@@ -24,10 +24,19 @@ try {
      */
     $requirements = include __DIR__ . '/config/requirements.php' ?? [];
 
+    /**
+     * Loads the words configuration to the `$words` property of the `\App\Utils\Support` static class.
+     */
+    \App\Utils\Support::$words = include __DIR__ . '/config/words.php' ?? [];
+
+    /**
+     * Calculates the data provided requirements.
+     */
     $data = (new \App\Calculator\PointCalculator($requirements))->calculate();
 
-    echo "Array (" . count($data) . "):\n";
-
+    /**
+     * Prints the calculated data in a formatted manner.
+     */
     foreach ($data as $key => $value) {
         echo "[\033[1;32m$key\033[0m] => \033[1;34m$value\033[0m\n";
     }

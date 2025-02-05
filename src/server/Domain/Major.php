@@ -33,7 +33,7 @@ final class Major
      */
     public array $majorOptionalSubjects = [
         MajorEnum::COMPUTER_SCIENCE->value => ['biologia', 'fizika', 'informatika', 'kemia'],
-        MajorEnum::ANGLISTICS->value => ['francia', 'nemet', 'olasz', 'oros', 'spanyol', 'tortenelem'],
+        MajorEnum::ANGLISTICS->value => ['francia', 'nemet', 'olasz', 'orosz', 'spanyol', 'tortenelem'],
     ];
 
     /**
@@ -93,7 +93,7 @@ final class Major
                 continue;
             }
 
-            $this->Applicant->addMissingSubjects($subject);
+            $this->Applicant->addMissingSubjects(Support::changeWordKeyToText($subject));
         }
     }
 
@@ -120,7 +120,7 @@ final class Major
                 continue;
             }
 
-            $this->Applicant->addMissingSubjects($majorSubject['subject']);
+            $this->Applicant->addMissingSubjects(Support::changeWordKeyToText($majorSubject['subject']));
 
             break;
         }
@@ -147,7 +147,7 @@ final class Major
         }
 
         foreach ($majorSubject as $subject) {
-            $this->Applicant->addMissingSubjects($subject);
+            $this->Applicant->addMissingSubjects(Support::changeWordKeyToText($subject));
         }
     }
 
@@ -165,7 +165,9 @@ final class Major
                 continue;
             }
 
-            $this->Applicant->addLowerSubjects($subject['nev']);
+            $subject['nev'] = Support::slugify($subject['nev']);
+
+            $this->Applicant->addLowerSubjects(Support::changeWordKeyToText($subject['nev']));
         }
     }
 }

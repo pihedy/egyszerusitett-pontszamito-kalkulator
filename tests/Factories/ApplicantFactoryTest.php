@@ -41,41 +41,4 @@ class ApplicantFactoryTest extends TestCase
         $this->assertInstanceOf(Applicant::class, $result['exampleData1']);
         $this->assertInstanceOf(Applicant::class, $result['exampleData2']);
     }
-
-    /* public function testCreateFromArrayWithValidData(): void
-    {
-        $data = ['name' => 'John Doe', 'age' => 30];
-        $applicant = ApplicantFactory::createFromArray($data);
-
-        $this->assertInstanceOf(Applicant::class, $applicant);
-        $this->assertSame('John Doe', $applicant->getName());
-        $this->assertSame(30, $applicant->getAge());
-    }
-
-    public function testCreateFromArrayWithEmptyArray(): void
-    {
-        $data = [];
-        $applicant = ApplicantFactory::createFromArray($data);
-
-        $this->assertInstanceOf(Applicant::class, $applicant);
-        $this->assertSame('', $applicant->getName());
-        $this->assertNull($applicant->getAge());
-    }
-
-    public function testCreateFromArrayWithMissingFields(): void
-    {
-        $data = ['name' => 'Jane Doe'];
-        $applicant = ApplicantFactory::createFromArray($data);
-
-        $this->assertInstanceOf(Applicant::class, $applicant);
-        $this->assertSame('Jane Doe', $applicant->getName());
-        $this->assertNull($applicant->getAge());
-    }
-
-    public function testCreateFromArrayWithInvalidDataType(): void
-    {
-        $data = 'invalid data type';
-        $this->expectException(TypeError::class);
-        ApplicantFactory::createFromArray($data);
-    } */
 }
