@@ -1,0 +1,25 @@
+{
+    "name": "pihedy/findmydrone",
+    "description": "TODO: Add long description",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\" : "src/server"
+        }
+    },
+    "config": {
+        "vendor-dir": "src/vendor",
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=8.3.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.6",
+        "phpunit/phpunit": "^11.5"
+    },
+    "scripts": {
+        "test": "phpunit --colors=always --testdox"
+    }
+}
